@@ -136,9 +136,21 @@ int main(){
 
 
     // clean up and exit
-    matrix_delete(Qk); matrix_delete(Rk); matrix_delete(C); matrix_delete(U); matrix_delete(R);
-    matrix_delete(M); matrix_delete(T); matrix_delete(S);
-    vector_delete(I); vector_delete(Icol); vector_delete(Irow);
+    
+	// Qk is deleted in use_pivoted_QR_decomp_for_approximation, so don't delete again
+	//matrix_delete(Qk);
+	
+	matrix_delete(Rk);
+	matrix_delete(C);
+	matrix_delete(U);
+	matrix_delete(R);
+    matrix_delete(M);
+	matrix_delete(T);
+	matrix_delete(S);
+    vector_delete(I);
+	vector_delete(Icol);
+	vector_delete(Irow);
+
     return 0;
 }
 
