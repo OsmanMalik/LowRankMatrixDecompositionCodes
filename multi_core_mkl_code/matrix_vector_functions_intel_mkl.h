@@ -1,3 +1,6 @@
+#ifndef __MATRIX_VECTOR_FUNCTIONS_INTEL_MKL_H__
+#define __MATRIX_VECTOR_FUNCTIONS_INTEL_MKL_H__
+
 #include <stdio.h>
 #include "mkl.h"
 #include "mkl_lapacke.h"
@@ -359,3 +362,4 @@ void square_matrix_system_solve(mat *A, mat *X, mat *B);
 /* get seconds for recording runtime */
 double get_seconds_frac(struct timeval start_timeval, struct timeval end_timeval);
 
+#endif
