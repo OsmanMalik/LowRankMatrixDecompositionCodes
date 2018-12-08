@@ -1,7 +1,7 @@
 #ifndef __RANK_REVEALING_ALGORITHMS_INTEL_MKL_H__
 #define __RANK_REVEALING_ALGORITHMS_INTEL_MKL_H__
 
-
+#include <math.h>
 #include "matrix_vector_functions_intel_mkl.h"
 
 void low_rank_svd_decomp_fixed_rank_or_prec(mat *M, int k, double TOL, int *frank, mat **U, mat **S, mat **V);
