@@ -340,6 +340,7 @@ void compact_QR_factorization(mat *M, mat *Q, mat *R);
 M is mxn ; Q is mxn ; R is not computed */ 
 void QR_factorization_getQ(mat *M, mat *Q);
 
+void singular_value_decomposition(mat *M, mat *U, mat *S, mat *Vt){
 
 /* for autorank 1 */
 void estimate_rank_and_buildQ(mat *M, double frac_of_max_rank, double TOL, mat **Q, int *good_rank);
