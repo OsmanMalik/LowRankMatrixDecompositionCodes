@@ -13,8 +13,7 @@ int main()
     double normM,normU,normS,normV,normP,percent_error;
     mat *M, *U, *S, *V, *P;
     time_t start_time, end_time;
-    //char *M_file = "../data/A_mat_6kx12k.bin";
-    char *M_file = "../../matrix_data/A_mat_1kx2k.bin";
+    char *M_file = "../data/A_mat_6kx12k.bin";
 
     printf("loading matrix from %s\n", M_file);
     M = matrix_load_from_binary_file(M_file);
