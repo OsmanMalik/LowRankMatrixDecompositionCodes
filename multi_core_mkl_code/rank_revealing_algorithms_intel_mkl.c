@@ -1860,6 +1860,8 @@ where I is the vector from the permutation and T = inv(Rk1)*Rk2
 l is oversampling parameter (e.g. l = 20), p is power sampling parameter (e.g. p = 5) 
 and s controls how many orthogonalizations are done in between mults in power 
 sampling scheme (e.g. p = 1) */
+/* Note by Osman: It seems like k is the target rank, p is the over sampling parameter,
+ * q is the power sampling parameter, and s controls the number of orthogonalizations */
 void id_rand_decomp_fixed_rank(mat *M, int k, int p, int q, int s, vec **I, mat **T){
     int i,j,ind,m,n;
     mat *RN, *Y, *Yt, *Yt_orth, *Z, *Qk, *Rk, *Qd, *Rd, *Rk1, *Rk2;
