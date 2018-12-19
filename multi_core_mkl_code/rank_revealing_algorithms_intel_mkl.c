@@ -1247,7 +1247,16 @@ void pivoted_QR_of_specified_rank_or_prec(mat *M, int k, double TOL, int *frank,
         }
 
         /* break; Qk and Rk already set for i>0 */
-        if(fabs(vector_get_element(column_norms1,max_colnorm_index)) < 1e-10 && i>0){
+       	/* Note by Osman: The commented out if statement below is the original code.
+		 * I commented it out and replaced it with a new if statement which has a stricter
+		 * requirement for accepting (the quantity must be identically zero instead of less
+		 * than 1e-10 in magnitude). The reason for making this change was that in cases when
+		 * we have matrice with very small singular values, the original code would return a 
+		 * matrix ID of lower rank than that we specified when calling the function. This is 
+		 * undesirable when in our experiments since we consider matrices with very small 
+		 * singular values. */
+		//if(fabs(vector_get_element(column_norms1,max_colnorm_index)) < 1e-10 && i>0){
+        if(fabs(vector_get_element(column_norms1,max_colnorm_index)) == 0 && i>0){
             column_norm_zero = 1;
             printf("column norm zero detected and will break!\n");
             break;
